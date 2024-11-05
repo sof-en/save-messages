@@ -1,20 +1,21 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 interface IData {
-  id: number | string | null;
+  id: id;
   authorName: string;
   title: string;
 }
+type id = number | string | null;
 export const api = createApi({
   reducerPath: "baseApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3000" }),
-  tagTypes: ['Messages'], // Определяем теги
+  baseQuery: fetchBaseQuery({ baseUrl: "https://save-db.onrender.com" }),
+  tagTypes: ["Messages"],
   endpoints: (builder) => ({
     getMessages: builder.query<IData[], void>({
       query: () => ({
         url: "/messageData",
       }),
-      providesTags: ['Messages'], // Добавляем теги к запросу
+      providesTags: ["Messages"],
     }),
     createMessages: builder.mutation({
       query: (data) => ({
@@ -22,9 +23,20 @@ export const api = createApi({
         method: "POST",
         body: data,
       }),
-      invalidatesTags: ['Messages'], // Инвалидируем теги после мутации
+      invalidatesTags: ["Messages"],
+    }),
+    deleteMessage: builder.mutation({
+      query: (id: id) => ({
+        url: `/messageData/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Messages"],
     }),
   }),
 });
 
-export const { useGetMessagesQuery, useCreateMessagesMutation } = api;
+export const {
+  useGetMessagesQuery,
+  useCreateMessagesMutation,
+  useDeleteMessageMutation,
+} = api;

@@ -1,9 +1,9 @@
 .content{
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 5px;
     background: var(--white-color);
-    border-radius: 20px;
+    border-radius: 10px;
 }
 .head{
     display: flex;
@@ -11,7 +11,12 @@
     justify-content: space-between;
     gap: 15px;
 }
+.features{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 h2{
     font-size: 18px;
-    margin-bottom: 15px;
 }

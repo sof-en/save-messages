@@ -3,13 +3,13 @@ import { FC, useState } from "react";
 import c from "./style.module.css";
 import { Button, Input } from "antd";
 import TextArea from "antd/es/input/TextArea";
-import { SharedModal, useCreateMessagesMutation } from "../../shared";
+import { ModalOpenLayout, useCreateMessagesMutation } from "../../shared";
 export const AddMessage: FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [input, setInput] = useState("");
   const [textarea, setTextarea] = useState("");
   const [createMessage] = useCreateMessagesMutation();
-  
+
   const showModal = () => {
     setIsModalOpen(true);
   };
@@ -24,24 +24,23 @@ export const AddMessage: FC = () => {
     };
     try {
       await createMessage(data).unwrap();
-      onCancel()
+      onCancel();
+      setInput("");
+      setTextarea("");
     } catch (err) {
       console.log(err);
     }
   };
+
   return (
-    <div className={c.content}>
-      <Button onClick={showModal} type="primary">
-        <AiFillPlusCircle />
-      </Button>
-      <SharedModal onCancel={onCancel} open={isModalOpen}>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleSubmit();
-          }}
-          className={c.modal}
-        >
+    <ModalOpenLayout
+      showModal={showModal}
+      onCancel={onCancel}
+      isModalOpen={isModalOpen}
+      btnComponent={<AiFillPlusCircle />}
+      handleSubmit={handleSubmit}
+      children={
+        <>
           <Input
             placeholder="Введите имя"
             value={input}
@@ -57,8 +56,8 @@ export const AddMessage: FC = () => {
           <Button htmlType="submit" type="primary">
             СОЗДАТЬ
           </Button>
-        </form>
-      </SharedModal>
-    </div>
+        </>
+      }
+    />
   );
 };

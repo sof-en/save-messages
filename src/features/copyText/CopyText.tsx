@@ -1,3 +1,5 @@
+import { AiOutlineCheck } from "react-icons/ai";
+import { AiOutlineCopy } from "react-icons/ai";
 import { FC, useState } from "react";
 import { Button, message } from "antd";
 
@@ -12,7 +14,7 @@ export const CopyButton: FC<CopyTextProps> = ({ textToCopy }) => {
     try {
       await navigator.clipboard.writeText(textToCopy);
       setIsCopied(true);
-      message.success("Текст скопирован!"); 
+      message.success("Текст скопирован!");
       setTimeout(() => setIsCopied(false), 2000);
     } catch (err) {
       console.error("Ошибка при копировании текста:", err);
@@ -22,10 +24,9 @@ export const CopyButton: FC<CopyTextProps> = ({ textToCopy }) => {
 
   return (
     <>
-      <Button style={{fontSize:"12px"}}  type="dashed" onClick={handleCopy}>
-        {isCopied ? "Скопировано" : "Копировать"}
+      <Button style={{ fontSize: "12px" }} type="text" onClick={handleCopy}>
+        {isCopied ? <AiOutlineCheck /> : <AiOutlineCopy />}
       </Button>
     </>
   );
 };
-

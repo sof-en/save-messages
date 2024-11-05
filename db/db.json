@@ -2,58 +2,8 @@
   "messageData": [
     {
       "id": "1",
-      "authorName": "Developer",
-      "title": "Hy gues"
-    },
-    {
-      "id": "3a7f",
-      "authorName": "f",
-      "title": "f"
-    },
-    {
-      "id": "3e51",
-      "authorName": "f",
-      "title": "f"
-    },
-    {
-      "id": "48b2",
-      "authorName": "f",
-      "title": "f"
-    },
-    {
-      "id": "bd16",
-      "authorName": "f",
-      "title": "f"
-    },
-    {
-      "id": "9543",
       "authorName": "developer",
-      "title": "import { useState } from \"react\";\nimport { Button, Input } from \"antd\";\nimport { useCreateMessageMutation } from \"../path/to/api\"; // Убедитесь, что путь правильный\n\nconst CreateMessageComponent = () => {\n  const [name, setName] = useState('');\n  const [text, setText] = useState('');\n  const [createMessage, { isLoading, isSuccess, error }] = useCreateMessageMutation();\n\n  const handleSubmit = async () => {\n    try {\n      await createMessage({ name, text }).unwrap(); // unwrap для обработки ошибок\n      alert('Сообщение успешно создано!');\n      setName('');\n      setText('');\n    } catch (err) {\n      console.error('Ошибка при создании сообщения:', err);\n    }\n  };\n\n  return (\n    <div>\n      <Input \n        placeholder=\"Введите имя\" \n        value={name} \n        onChange={(e) => setName(e.target.value)} \n        required \n      />\n      <Input.TextArea \n        placeholder=\"Введите текст\" \n        value={text} \n        onChange={(e) => setText(e.target.value)} \n        required \n      />\n      <Button type=\"primary\" onClick={handleSubmit} disabled={isLoading}>\n        {isLoading ? 'Отправка...' : 'Создать'}\n      </Button>\n      {isSuccess && <p>Сообщение успешно отправлено!</p>}\n      {error && <p>Произошла ошибка при отправке сообщения.</p>}\n    </div>\n  );\n};\n\nexport default CreateMessageComponent;\n"
-    },
-    {
-      "id": "1370",
-      "authorName": "developer",
-      "title": "import { useState } from \"react\";\nimport { Button, Input } from \"antd\";\nimport { useCreateMessageMutation } from \"../path/to/api\"; // Убедитесь, что путь правильный\n\nconst CreateMessageComponent = () => {\n  const [name, setName] = useState('');\n  const [text, setText] = useState('');\n  const [createMessage, { isLoading, isSuccess, error }] = useCreateMessageMutation();\n\n  const handleSubmit = async () => {\n    try {\n      await createMessage({ name, text }).unwrap(); // unwrap для обработки ошибок\n      alert('Сообщение успешно создано!');\n      setName('');\n      setText('');\n    } catch (err) {\n      console.error('Ошибка при создании сообщения:', err);\n    }\n  };\n\n  return (\n    <div>\n      <Input \n        placeholder=\"Введите имя\" \n        value={name} \n        onChange={(e) => setName(e.target.value)} \n        required \n      />\n      <Input.TextArea \n        placeholder=\"Введите текст\" \n        value={text} \n        onChange={(e) => setText(e.target.value)} \n        required \n      />\n      <Button type=\"primary\" onClick={handleSubmit} disabled={isLoading}>\n        {isLoading ? 'Отправка...' : 'Создать'}\n      </Button>\n      {isSuccess && <p>Сообщение успешно отправлено!</p>}\n      {error && <p>Произошла ошибка при отправке сообщения.</p>}\n    </div>\n  );\n};\n\nexport default CreateMessageComponent;\n"
-    },
-    {
-      "id": "3fb4",
-      "authorName": "e",
-      "title": "e"
-    },
-    {
-      "id": "0825",
-      "authorName": "head",
-      "title": "ТП - совокупность методов и средств, используемых в процессе разработки ПО. \nТП представляет собой набор технологических инструкций, включающих:\nуказание последовательности выполнения технологических операций;\nперечисление условий, при которых выполняется та или иная операция;\nописания самих операций, для каждой операции определены исходные данные, результаты, а также инструкции, нормативы, стандарты, критерии и методы оценки и т.п. \n\nТехнология также определяет способ описания проектируемой системы, точнее модели, используемой на конкретном этапе разработки"
-    },
-    {
-      "id": "6b9c",
-      "authorName": "e",
-      "title": "1\n"
-    },
-    {
-      "id": "163b",
-      "authorName": "hay",
-      "title": "1\n\n"
+      "title": "hy gues"
     }
   ]
 }
