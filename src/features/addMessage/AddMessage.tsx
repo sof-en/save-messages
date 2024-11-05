@@ -1,6 +1,5 @@
 import { AiFillPlusCircle } from "react-icons/ai";
 import { FC, useState } from "react";
-import c from "./style.module.css";
 import { Button, Input } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import { ModalOpenLayout, useCreateMessagesMutation } from "../../shared";
