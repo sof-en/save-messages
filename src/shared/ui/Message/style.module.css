@@ -1,0 +1,17 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background: var(--white-color);
+    border-radius: 20px;
+}
+.head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+h2{
+    font-size: 18px;
+    margin-bottom: 15px;
+}
