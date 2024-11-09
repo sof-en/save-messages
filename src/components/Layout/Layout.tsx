@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 const Layout: FC = () => {
   const { data, isLoading } = useGetMessagesQuery();
   const loginState = useSelector((state: RootState) => state.loginState);
-  console.log(loginState.succsess);
+  // console.log(loginState.succsess);
   return (
     <Spin spinning={isLoading}>
       <div className={c.content}>
