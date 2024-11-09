@@ -12,7 +12,7 @@ const Layout: FC = () => {
     <Spin spinning={isLoading}>
       <div className={c.content}>
         <div className={c.head}>
-          <h1>сохраните и используйте</h1>
+          <h1>save and use</h1>
           <div className={c.head__left}>
             {loginState.succsess ? <AddMessage /> : <Login />}
           </div>
