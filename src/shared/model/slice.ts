@@ -5,8 +5,8 @@ export interface ILogin {
   succsess: boolean;
 }
 const initialState: ILogin = {
-  login: process.env.REACT_APP_LOGIN || "",
-  password: process.env.REACT_APP_PASSWORD || "",
+  login: "Save",
+  password: "save1",
   succsess: false,
 };
 
